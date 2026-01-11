@@ -1,0 +1,19 @@
+name: fwi-marmousi-deepwave-cpu
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - scipy
+  - matplotlib
+  - scikit-image
+  - jupyterlab
+  - ipykernel
+  - pytorch
+  - torchvision
+  - torchaudio
+  - cpuonly
+  - pip:
+      - deepwave
