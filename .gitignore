@@ -44,9 +44,9 @@ fwi_10shot.ipynb
 # ignore everything by default
 *
 
-# keep gitignore itself
+# but keep git config files
 !.gitignore
 
-# keep the notebook you want to publish
-!fwi_marmousi_torch.ipynb
+# keep the notebook we want to publish
+!fwi_marmousi_deepwave.ipynb
 
