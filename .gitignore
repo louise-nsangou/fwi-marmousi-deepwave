@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.pyc
+
+# Conda / virtual environments
+env/
+venv/
+*.conda
+anaconda3/
+.env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data / binaries (DO NOT UPLOAD)
+*.bin
+*.npy
+*.npz
+*.h5
+
+# Generated figures & animations
+*.png
+*.jpg
+*.gif
+
+# Frame directories
+grad_frames/
+grad_frames_deepwave/
+grad_frames_devito/
+
+# Results / outputs
+results/
+output*
+
+# Unnecessary notebooks
+forward_models_10.ipynb
+forward_models_20.ipynb
+fm_marmousi.ipynb
+comp_graph
+code_pytorchwebsite.ipynb
+gradient_1.ipynb
+fwi_10shot.ipynb
+
+# ignore everything by default
+*
+
+# keep gitignore itself
+!.gitignore
+
+# keep the notebook you want to publish
+!fwi_marmousi_torch.ipynb
+
