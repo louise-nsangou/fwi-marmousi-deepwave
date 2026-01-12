@@ -80,8 +80,8 @@ This notebook uses Deepwave, a differentiable wave-propagation library built on 
 ## Limitations
 
 The repository does not include:
-- The Marmousi velocity model. It is loaded from a local file path and is not included in this repository; users must provide their own copy (e.g., from SEG or institutional mirrors).
-- saved inversion results (only figures generated in the notebook)
+- The Marmousi velocity model. It is loaded from a local file path and must be provided by the user (e.g., from the GeoAzur WIND database: https://www.geoazur.fr/WIND/bin/view/Main/Data/Marmousi, or from SEG or institutional mirrors).
+- Saved inversion results (only figures generated in the notebook).
 
 Therefore, exact reproducibility depends on the local software environment and data availability.
 
@@ -95,6 +95,10 @@ https://ausargeo.com/deepwave/pytorch
 Virieux, J., & Operto, S. (2009).  
 An overview of full-waveform inversion in exploration geophysics.  
 *Geophysics*, 74(6), WCC1–WCC26.
+
+Marmousi velocity model (dataset).  
+GeoAzur WIND database. Retrieved January 12, 2026, from  
+https://www.geoazur.fr/WIND/bin/view/Main/Data/Marmousi
 
 ---
 
