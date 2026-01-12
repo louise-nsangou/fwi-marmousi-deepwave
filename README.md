@@ -89,8 +89,7 @@ Therefore, exact reproducibility depends on the local software environment and d
 
 ## References
 
-Deepwave (PyTorch wave propagation and automatic differentiation):  
-https://ausargeo.com/deepwave/pytorch
+Richardson, A. (Deepwave). Zenodo. https://doi.org/10.5281/zenodo.3829886
 
 Virieux, J., & Operto, S. (2009).  
 An overview of full-waveform inversion in exploration geophysics.  
