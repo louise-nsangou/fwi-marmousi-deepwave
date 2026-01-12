@@ -110,6 +110,12 @@ University of Pisa & Montanuniversität Leoben
 
 ---
 
+## Acknowledgements
+
+I would like to thank **Dr. Sean Berti** and **Prof. Nicola Bienati** for helpful discussions, guidance, and support during the development of this project.
+
+---
+
 ## How to cite this repository
 
 If you use this notebook (code, figures, or results) in academic work, please cite it as:
