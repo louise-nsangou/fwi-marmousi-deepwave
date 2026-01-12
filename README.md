@@ -1,6 +1,6 @@
 # Full Waveform Inversion on the Marmousi Model with Deepwave (PyTorch)
 
-This repository contains a single Jupyter notebook implementing **2-D acoustic Full Waveform Inversion (FWI)** on the **Marmousi velocity model** using **Deepwave** and **PyTorch automatic differentiation**.
+This repository contains a single Jupyter notebook implementing **2-D acoustic Full Waveform Inversion (FWI)** on the **Marmousi velocity model** using **Deepwave** and **PyTorch automatic differentiation**. It documents a single reproducible FWI experiment rather than a general-purpose inversion framework.
 
 The notebook demonstrates how differentiable wave propagation can be used to perform gradient-based seismic inversion.
 
@@ -34,6 +34,15 @@ The gradient of the misfit is computed through PyTorch’s automatic differentia
 
 ## How to run
 
+### Environment
+CPU:
+conda env create -f environment.cpu.yml  
+conda activate fwi-marmousi-deepwave-cpu  
+
+GPU (NVIDIA):
+conda env create -f environment.gpu.yml  
+conda activate fwi-marmousi-deepwave-gpu
+
 1. Install the required Python packages:
    - `torch`
    - `deepwave`
@@ -52,7 +61,7 @@ The gradient of the misfit is computed through PyTorch’s automatic differentia
 
 ## Example outputs
 
-![Observed data](observed_data_shot_1.png)
+![Observed data](https://raw.githubusercontent.com/louise-nsangou/fwi-marmousi-deepwave/main/observed_data_shot_1.png?v=2)
 
 ![FWI result](result_fwi_marmousi.png)
 
@@ -69,7 +78,7 @@ This notebook uses Deepwave, a differentiable wave-propagation library built on 
 ## Limitations
 
 The repository does not include:
-- Marmousi model file, it is loaded from the disk. It can be downloaded from this website https://www.geoazur.fr/WIND/bin/view/Main/Data/Marmousi
+- The Marmousi velocity model. It is loaded from a local file path and is not included in this repository; users must provide their own copy (e.g., from SEG or institutional mirrors).
 - saved inversion results (only figures generated in the notebook)
 
 Therefore, exact reproducibility depends on the local software environment and data availability.
@@ -111,3 +120,4 @@ GitHub repository: https://github.com/louise-nsangou/fwi-marmousi-deepwave
   howpublished = {\url{https://github.com/louise-nsangou/fwi-marmousi-deepwave}},
   note         = {Jupyter notebook implementing acoustic FWI on the Marmousi model using Deepwave and PyTorch}
 }
+
