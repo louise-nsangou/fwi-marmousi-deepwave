@@ -52,7 +52,7 @@ The gradient of the misfit is computed through PyTorch’s automatic differentia
 
 ## Example outputs
 
-![Observed data](observed_data_shot_1.jpg)
+![Observed data](https://raw.githubusercontent.com/louise-nsangou/fwi-marmousi-deepwave/main/observed_data_shot_1.png)
 
 ![FWI result](result_fwi_marmousi.png)
 
