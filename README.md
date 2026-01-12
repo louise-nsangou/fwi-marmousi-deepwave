@@ -45,19 +45,29 @@ conda activate fwi-marmousi-deepwave-cpu
 conda env create -f environment.gpu.yml  
 conda activate fwi-marmousi-deepwave-gpu
 
-1. Install the required Python packages:
-   - `torch`
-   - `deepwave`
-   - `numpy`
-   - `scipy`
-   - `matplotlib`
-   - `scikit-image`
-   - `jupyterlab` or `notebook`
+1. Create the Conda environment using the provided YAML file (see above).
 
 2. Open the notebook:
    - `fwi_marmousi_deepwave.ipynb`
 
 3. Run all cells in order.
+
+---
+
+## Reproducibility check
+
+This repository was tested from a clean clone on **WSL2 Ubuntu 24.04** using the provided CPU environment file:
+
+
+```bash
+git clone https://github.com/louise-nsangou/fwi-marmousi-deepwave
+cd fwi-marmousi-deepwave
+conda env create -f environment.cpu.yml
+conda activate fwi-marmousi-deepwave-cpu
+python -c "import torch, deepwave, numpy, scipy, matplotlib, skimage; print('Imports OK')"
+jupyter lab
+```
+
 
 ---
 
@@ -80,7 +90,7 @@ This notebook uses Deepwave, a differentiable wave-propagation library built on 
 ## Limitations
 
 The repository does not include:
-- The Marmousi velocity model. It is loaded from a local file path and must be provided by the user (e.g., from the GeoAzur WIND database: https://www.geoazur.fr/WIND/bin/view/Main/Data/Marmousi, or from SEG or institutional mirrors).
+- The Marmousi velocity model. It is loaded from a local file path and must be provided by the user (e.g., from the GeoAzur WIND database: https://www.geoazur.fr/WIND/bin/view/Main/Data/Marmousi).
 - Saved inversion results (only figures generated in the notebook).
 
 Therefore, exact reproducibility depends on the local software environment and data availability.
@@ -131,4 +141,4 @@ GitHub repository: https://github.com/louise-nsangou/fwi-marmousi-deepwave
   howpublished = {\url{https://github.com/louise-nsangou/fwi-marmousi-deepwave}},
   note         = {Jupyter notebook implementing acoustic FWI on the Marmousi model using Deepwave and PyTorch}
 }
-
+```
