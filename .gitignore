@@ -51,3 +51,5 @@ fwi_10shot.ipynb
 !fwi_marmousi_deepwave.ipynb
 !environment.cpu.yml
 !environment.gpu.yml
+!result_fwi_marmousi.png
+!observed_data_shot_1.png
