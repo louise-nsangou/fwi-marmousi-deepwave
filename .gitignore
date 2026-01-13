@@ -53,3 +53,4 @@ fwi_10shot.ipynb
 !environment.gpu.yml
 !result_fwi_marmousi.png
 !observed_data_shot_1.png
+!all_data.png
