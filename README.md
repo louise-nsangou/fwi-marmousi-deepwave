@@ -18,10 +18,10 @@ The notebook demonstrates how differentiable wave propagation can be used to per
 |`environment.gpu.yml`|Conda environment for NVIDIA GPU (CUDA) execution|
 | `observed_data_shot_1.png` | Example figure (observed data, shot 1) |
 | `result_fwi_marmousi.png` | Example figure (FWI result) |
-| `all_data.png` | Figure of the observed data, the predicted data and the resiudal |
+| `all_data.png` | Observed vs predicted vs residual (example shot) |
 
 The repository is intentionally minimal (code + environments + small example figures).
-No large datasets stored.
+No large datasets are stored.
 
 ---
 
@@ -33,8 +33,8 @@ In `fwi_marmousi_deepwave.ipynb`, the workflow is:
 2. Smooth + subsample the model to reduce computational cost.
 3. Define acquisition geometry (shots/receivers) and a Ricker source wavelet.
 4. Generate synthetic “observed” data via forward modeling with Deepwave.
-5. Run FWI with Adam optimiser **and a learning-rate schedule**.
-6. Plot inversion progress and final results.
+5. Run FWI with Adam optimiser, including **gradient smoothing/clipping** and a **learning-rate schedule**.
+6. Plot inversion progress and final velocity model.
 7. Compute **shot-by-shot data misfit metrics** and plot **observed vs predicted vs residual** for selected shots.
 
 Gradients are obtained via **PyTorch autograd** through the Deepwave propagator.
@@ -58,20 +58,19 @@ conda activate fwi-marmousi-deepwave-gpu
 ```
 
 ## Marmousi model input (required)
-The notebook expects a **Marmousi P-wave velocity** file in **raw binary `.bin`** format (Vp, in m/s), e.g. from the GeoAzur WIND database:
+The notebook expects a **Marmousi P-wave velocity** file in **raw binary `.bin`** format (Vp, in m/s). A commonly used source is the GeoAzur WIND database:
 
 https://www.geoazur.fr/WIND/bin/view/Main/Data/Marmousi
 
 Place the file where the notebook expects it (see the model-loading cell), or edit the path variable in the notebook accordingly.
 
-Note: the notebook assumes a specific array shape/dtype when reading the file (as defined in the loading cell). If your .bin differs (shape, dtype), update those parameters in the notebook.
+**Important**: the loader assumes a specific **dtype** and **array shape** (as defined in the loading cell). If your .bin differs (shape/dtype), update those parameters in the notebook.
 
 ---
 
 ## Reproducibility check
-
-This repository was tested from a clean clone on **WSL2 Ubuntu 24.04** using the provided CPU environment file.
-
+**Option A (local)**: recommended if you want full control over the environment.
+Run these commands on your local machine (or WSL2 on Windows) to verify a clean install from scratch.
 
 ```bash
 git clone https://github.com/louise-nsangou/fwi-marmousi-deepwave
@@ -84,6 +83,30 @@ jupyter lab
 
 If `conda env create` fails with a transient network error (e.g., `IncompleteRead`), retrying the same command usually resolves it.
 
+
+---
+## Run on Google Colab
+**Option B (cloud)**: quickest way to run without local setup.
+
+1. Open the notebook in Colab:
+   - https://colab.research.google.com/github/louise-nsangou/fwi-marmousi-deepwave/blob/main/fwi_marmousi_deepwave.ipynb
+
+2. (Optional) Enable GPU:
+   - Runtime → Change runtime type → GPU
+
+3. Install dependencies:
+```python
+!pip -q install deepwave scikit-image
+```
+
+4. Upload the Marmousi velocity model file (ensure it matches the filename expected by the notebook), e.g. `marmousi_vp.bin`
+```python
+from google.colab import files
+files.upload()  # select marmousi_vp.bin
+```
+After upload, the file will be available in the Colab working directory (usually `/Files`). If your notebook expects another path, update the path variable in the model-loading cell.
+
+5. Run all cells in order
 
 ---
 
