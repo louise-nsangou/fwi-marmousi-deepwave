@@ -1,5 +1,7 @@
 # Full Waveform Inversion on the Marmousi Model with Deepwave (PyTorch)
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/louise-nsangou/fwi-marmousi-deepwave/blob/main/fwi_marmousi_deepwave.ipynb)
+
 This repository contains a single Jupyter notebook implementing **2-D acoustic Full Waveform Inversion (FWI)** on the **Marmousi velocity model** using **Deepwave** and **PyTorch automatic differentiation**. It documents a **reproducible FWI experiment** (not a general-purpose inversion framework): forward modeling → inversion → diagnostics and error metrics.
 
 The notebook demonstrates how differentiable wave propagation can be used to perform gradient-based seismic inversion.
