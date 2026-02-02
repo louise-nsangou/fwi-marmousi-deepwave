@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this research notebook (code, figures, or results), please cite it as below."
+type: software
+title: "Full Waveform Inversion on the Marmousi Model with Deepwave (PyTorch)"
+authors:
+  - family-names: "Nsangou"
+    given-names: "Louise-Marietta"
+url: "https://github.com/louise-nsangou/fwi-marmousi-deepwave"
+
+references:
+  - type: software
+    title: "Deepwave"
+    authors:
+      - family-names: "Richardson"
+        given-names: "Alan"
+    doi: "10.5281/zenodo.3829886"
+    url: "https://doi.org/10.5281/zenodo.3829886"
